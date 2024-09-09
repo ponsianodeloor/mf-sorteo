@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {SorteoService} from "../../services/sorteo.service";
+import {Sorteo} from "../../interfaces/sorteo";
 
 @Component({
   selector: 'app-sorteo-page',
@@ -9,9 +11,11 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 export class SorteoPageComponent implements OnInit {
 
   public myForm:FormGroup = new FormGroup({});
+  public sorteo?: Sorteo;
 
   constructor(
     private fb: FormBuilder,
+    private sorteoService: SorteoService
   ) { }
 
   ngOnInit(): void {
@@ -29,7 +33,17 @@ export class SorteoPageComponent implements OnInit {
       this.myForm.markAllAsTouched();
       return;
     }
-    console.log(this.myForm.value);
+    const codigo = this.myForm.get('codigo')?.value;
+    console.log(codigo);
+
+    this.sorteoService.getSorteoByCodigo(codigo).subscribe(sorteo => {
+      console.log(sorteo);
+      this.sorteo = sorteo;
+    });
+
+
+
+
   }
 
 

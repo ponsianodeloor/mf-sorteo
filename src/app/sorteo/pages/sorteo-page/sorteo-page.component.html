@@ -9,8 +9,31 @@
       placeholder="201809SCP00051"
     >
 
-    <mat-error *ngIf="isFieldValid('codigo')">Please enter a valid email address</mat-error>
+    <mat-error *ngIf="isFieldValid('codigo')">Por favor ingrese un código</mat-error>
 
   </mat-form-field>
   <button mat-raised-button color="primary">Buscar</button>
 </form>
+
+<mat-card class="example-card" appearance="outlined">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>Shiba Inu - {{sorteo?.idSorteo}}</mat-card-title>
+    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+  <mat-card-content>
+    <p><strong>IdSorteo: {{sorteo?.idSorteo}}</strong></p>
+    <p><strong>Alias: {{sorteo?.alias}}</strong></p>
+    <p><strong>codigoSorteo: {{sorteo?.codigoSorteo}}</strong></p>
+    <p><strong>cuantia: {{sorteo?.cuantia}}</strong></p>
+    <p><strong>nombreContrato: {{sorteo?.nombreContrato}}</strong></p>
+    <p><strong>numeroDocumento: {{sorteo?.numeroDocumento}}</strong></p>
+    <p><strong>numeroFojas: {{sorteo?.numeroFojas}}</strong></p>
+    <p><strong>idCategoria: {{sorteo?.idCategoria}}</strong></p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card>
