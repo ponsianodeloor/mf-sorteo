@@ -4,12 +4,13 @@ import {SorteoCategoryPageComponent} from "./pages/category/sorteo-category-page
 import {
   SorteoCategoryAddPageComponent
 } from "./pages/category/sorteo-category-add-page/sorteo-category-add-page.component";
+import {SorteoPageComponent} from "./pages/sorteo-page/sorteo-page.component";
 
 const routes: Routes = [
   {
     path: '',
     children: [
-      { path: 'all', component: SorteoCategoryPageComponent },
+      { path: 'all', component: SorteoPageComponent },
       { path: 'categories', component: SorteoCategoryPageComponent },
       { path: 'categories/add', component: SorteoCategoryAddPageComponent},
       { path: '**', redirectTo: 'all' },

@@ -1,1 +1,16 @@
 <p>sorteo-page works!</p>
+<form class="example-form" [formGroup]="myForm" (ngSubmit)="findByCode()">
+  <mat-form-field class="example-full-width">
+    <mat-label>Codigo Sorteo</mat-label>
+    <input
+      type="text"
+      matInput
+      formControlName="codigo"
+      placeholder="201809SCP00051"
+    >
+
+    <mat-error *ngIf="isFieldValid('codigo')">Please enter a valid email address</mat-error>
+
+  </mat-form-field>
+  <button mat-raised-button color="primary">Buscar</button>
+</form>
