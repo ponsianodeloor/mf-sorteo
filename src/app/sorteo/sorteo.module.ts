@@ -7,6 +7,8 @@ import { SorteoCategoryPageComponent } from './pages/category/sorteo-category-pa
 import { SorteoCategoryAddPageComponent } from './pages/category/sorteo-category-add-page/sorteo-category-add-page.component';
 import {MaterialModule} from "../material/material.module";
 import {ReactiveFormsModule} from "@angular/forms";
+import { CategoriesTableComponent } from './components/categories-table/categories-table.component';
+import {MatTable} from "@angular/material/table";
 
 
 @NgModule({
@@ -14,12 +16,14 @@ import {ReactiveFormsModule} from "@angular/forms";
     SorteoPageComponent,
     SorteoCategoryPageComponent,
     SorteoCategoryAddPageComponent,
+    CategoriesTableComponent,
   ],
   imports: [
     CommonModule,
     SorteoRoutingModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTable
   ]
 })
 export class SorteoModule { }

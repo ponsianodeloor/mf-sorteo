@@ -10,4 +10,7 @@ export const environment = {
   ENDPOINT_GET_SORTEO_BY_CODIGO: '/query/sorteo/codigo',
   ENDPOINT_GET_SORTEO_BY_CATEGORIA: '/query/sorteo/categoria',
   ENDPOINT_POST_CREATE_OR_UPDATE_SORTEO_CATEGORIA: '/command/sorteo/categoria',
+
+  BY_ESTADO: '/estado',
+
 }
