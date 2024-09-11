@@ -1,4 +1,7 @@
-<p>categories-table works!</p>
+<div>
+  <app-sorteo-category-add-page (categorySaved)="reloadCategories()"></app-sorteo-category-add-page>
+  <button mat-raised-button color="primary" (click)="reloadCategories()">Reload Categories</button>
+</div>
 
 <table mat-table [dataSource]="categories" class="mat-elevation-z8">
 

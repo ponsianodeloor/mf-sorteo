@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Output} from '@angular/core';
 import {CategoryService} from "../../services/category.service";
 import {Category} from "../../interfaces/category";
 
@@ -18,6 +18,11 @@ export class CategoriesTableComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.categoryService.getSorteoCategoriaByEstado('ACT')
+      .subscribe(categories => this.categories = categories);
+  }
+
+  reloadCategories(): void {
     this.categoryService.getSorteoCategoriaByEstado('ACT')
       .subscribe(categories => this.categories = categories);
   }

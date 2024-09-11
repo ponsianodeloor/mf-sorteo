@@ -14,6 +14,9 @@ export class CategoryService {
   private endpointGetSorteoByCategoria:string = environment.ENDPOINT_GET_SORTEO_BY_CATEGORIA;
   private byEstado:string = environment.BY_ESTADO;
 
+  private endpointPostCreateOrUpdateSorteoCategoria:string =
+    environment.ENDPOINT_POST_CREATE_OR_UPDATE_SORTEO_CATEGORIA;
+
   category: Category[] = [];
 
   constructor(
@@ -26,4 +29,10 @@ export class CategoryService {
         catchError(err => of([]))
       );
   }
+
+  createOrUpdateSorteoCategoria(category:Category):Observable<Category>{
+    return this.http.post<Category>(`${this.serverPesnot}${this.microservicePesnotActo}${this.endpointPostCreateOrUpdateSorteoCategoria}`, category);
+  }
+
+
 }
