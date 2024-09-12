@@ -16,7 +16,6 @@ export class SorteoCategoryAddPageComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private http: HttpClient,
     private categoryService: CategoryService
   ) {
     this.categoryForm = this.fb.group({
